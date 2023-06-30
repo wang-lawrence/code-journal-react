@@ -4,11 +4,7 @@ export default function ViewEntries() {
       <div class="row">
         <div class="column-full d-flex justify-between align-center">
           <h1>Entries</h1>
-          <h3>
-            <a id="formLink" class="white-text form-link" href="#">
-              NEW
-            </a>
-          </h3>
+          <NewEntryButton />
         </div>
       </div>
       <div class="row">
@@ -17,5 +13,15 @@ export default function ViewEntries() {
         </div>
       </div>
     </div>
+  );
+}
+
+function NewEntryButton() {
+  return (
+    <h3>
+      <a id="formLink" class="white-text form-link" href="#">
+        NEW
+      </a>
+    </h3>
   );
 }
