@@ -1,15 +1,15 @@
 export default function ViewEntries() {
   return (
-    <div class="container" data-view="entries">
-      <div class="row">
-        <div class="column-full d-flex justify-between align-center">
+    <div className="container" data-view="entries">
+      <div className="row">
+        <div className="column-full d-flex justify-between align-center">
           <h1>Entries</h1>
           <NewEntryButton />
         </div>
       </div>
-      <div class="row">
-        <div class="column-full">
-          <ul class="entry-ul" id="entryUl"></ul>
+      <div className="row">
+        <div className="column-full">
+          <EntriesList />
         </div>
       </div>
     </div>
@@ -19,7 +19,7 @@ export default function ViewEntries() {
 function NewEntryButton() {
   return (
     <h3>
-      <a id="formLink" class="white-text form-link" href="#">
+      <a id="formLink" className="white-text form-link" href="#">
         NEW
       </a>
     </h3>
@@ -27,20 +27,28 @@ function NewEntryButton() {
 }
 
 function EntriesList({ data }) {
-  // <li data-entry-id="">
-  //   <div class="row">
-  //     <div class="column-half">
-  //       <img class="input-b-radius form-image" src="" alt="">
-  //     </div>
-  //     <div class="column-half">
-  //        <div class="row">
-  //          <div class="column-full d-flex justify-between">
-  //            <h3>This is test Title</h3>
-  //             <i class='fa-solid fa-pencil'></i>
-  //           </div>
-  //        </div>
-  //       <p></p>
-  //     </div>
-  //   </div>
-  // </li>
+  return (
+    <ul className="entry-ul" id="entryUl">
+      <li data-entry-id="">
+        <div className="row">
+          <div className="column-half">
+            <img
+              className="input-b-radius form-image"
+              src="https://archives.bulbagarden.net/media/upload/f/fb/0001Bulbasaur.png"
+              alt="bulbasaur"
+            />
+          </div>
+          <div className="column-half">
+            <div className="row">
+              <div className="column-full d-flex justify-between">
+                <h3>This is test Title</h3>
+                <i className="fa-solid fa-pencil"></i>
+              </div>
+            </div>
+            <p>Grass Pokemon</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  );
 }
