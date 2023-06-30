@@ -1,4 +1,4 @@
-export default function Title() {
+export default function Title(onChangeTitle) {
   return (
     <>
       <label className="margin-bottom-1 d-block" htmlFor="title">
@@ -10,6 +10,7 @@ export default function Title() {
         type="text"
         id="formTitle"
         name="formTitle"
+        onChange={(e) => onChangeTitle(e.target.value)}
       />
     </>
   );
