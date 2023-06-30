@@ -3,7 +3,7 @@ import ViewEntries from './ViewEntries';
 import './reset.css';
 import './layout.css';
 import './styles.css';
-
+import ViewCreateEnty from './ViewCreateEntry';
 /* exported data */
 
 let data = {
@@ -28,6 +28,7 @@ function App() {
     <div className="App">
       <NavBar />
       <ViewEntries />
+      <ViewCreateEnty />
     </div>
   );
 }
