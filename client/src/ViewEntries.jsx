@@ -25,3 +25,22 @@ function NewEntryButton() {
     </h3>
   );
 }
+
+function EntriesList({ data }) {
+  // <li data-entry-id="">
+  //   <div class="row">
+  //     <div class="column-half">
+  //       <img class="input-b-radius form-image" src="" alt="">
+  //     </div>
+  //     <div class="column-half">
+  //        <div class="row">
+  //          <div class="column-full d-flex justify-between">
+  //            <h3>This is test Title</h3>
+  //             <i class='fa-solid fa-pencil'></i>
+  //           </div>
+  //        </div>
+  //       <p></p>
+  //     </div>
+  //   </div>
+  // </li>
+}
