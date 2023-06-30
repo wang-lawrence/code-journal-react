@@ -6,9 +6,9 @@ import EntryButtons from './EntryButtons';
 import { useState } from 'react';
 // import images from './images/placeholder-image-square.jpg';
 
-export default function ViewCreateEntry({ data }) {
-  const [title, setTitle] = useState('Title');
-  const [url, setUrl] = useState('url');
+export default function ViewCreateEntry({ data, onViewSwap }) {
+  const [title, setTitle] = useState('');
+  const [url, setUrl] = useState('');
   const [notes, setNotes] = useState('');
 
   function handleChangeTitle(text) {
@@ -33,9 +33,7 @@ export default function ViewCreateEntry({ data }) {
     if (data.editing === null) {
       formValues.entryId = data.nextEntryId++;
       data.entries.unshift(formValues);
-      setTitle('');
-      setUrl('');
-      setNotes('');
+
       // $ul.prepend(renderEntry(formValues));
     }
     console.log(data);
@@ -48,8 +46,10 @@ export default function ViewCreateEntry({ data }) {
     //   updateFormTitle('New Entry');
     //   data.editing = null;
     // }
-    // resetForm();
-    // viewSwap('entries');
+    setTitle('');
+    setUrl('');
+    setNotes('');
+    onViewSwap('entries');
   }
   return (
     <div className="container" data-view="entry-form">
