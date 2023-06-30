@@ -1,4 +1,4 @@
-export default function Notes() {
+export default function Notes({ onChangeNotes, activeNotes }) {
   return (
     <div className="column-full">
       <label className="margin-bottom-1 d-block" htmlFor="formNotes">
@@ -10,7 +10,9 @@ export default function Notes() {
         name="formNotes"
         id="formNotes"
         cols="30"
-        rows="10"></textarea>
+        rows="10"
+        value={activeNotes}
+        onChange={(e) => onChangeNotes(e.target.value)}></textarea>
     </div>
   );
 }

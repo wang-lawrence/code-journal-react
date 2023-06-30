@@ -4,6 +4,7 @@ import PhotoUrl from './PhotoUrl';
 import Notes from './Notes';
 import EntryButtons from './EntryButtons';
 import { useState } from 'react';
+// import images from './images/placeholder-image-square.jpg';
 
 export default function ViewCreateEntry({ data }) {
   const [title, setTitle] = useState('Title');
@@ -12,7 +13,6 @@ export default function ViewCreateEntry({ data }) {
 
   function handleChangeTitle(text) {
     setTitle(text);
-    console.log(data);
   }
 
   function handleChangeUrl(text) {
@@ -26,15 +26,19 @@ export default function ViewCreateEntry({ data }) {
   function handleSubmit(event) {
     event.preventDefault();
     const formValues = {
-      title: event.target.elements.formTitle.value,
-      photoUrl: event.target.elements.formURL.value,
-      notes: event.target.elements.formNotes.value,
+      title: title,
+      photoUrl: url,
+      notes: notes,
     };
     if (data.editing === null) {
       formValues.entryId = data.nextEntryId++;
       data.entries.unshift(formValues);
+      setTitle('');
+      setUrl('');
+      setNotes('');
       // $ul.prepend(renderEntry(formValues));
     }
+    console.log(data);
     // else {
     //  formValues.entryId = data.editing.entryId;
     //  updateEntries(formValues);
@@ -54,19 +58,19 @@ export default function ViewCreateEntry({ data }) {
           <h1 id="formH1">New Entry</h1>
         </div>
       </div>
-      <form id="entryForm">
+      <form id="entryForm" onSubmit={handleSubmit}>
         <div className="row margin-bottom-1">
-          <Placeholderimages />
+          <Placeholderimages url={url} />
           <div className="column-half">
-            <Title onChangeTitle={handleChangeTitle} />
-            <PhotoUrl />
+            <Title onChangeTitle={handleChangeTitle} activeTitle={title} />
+            <PhotoUrl onChangeUrl={handleChangeUrl} activeUrl={url} />
           </div>
         </div>
         <div className="row margin-bottom-1">
-          <Notes />
+          <Notes onChangeNotes={handleChangeNotes} activeNotes={notes} />
         </div>
         <div className="row">
-          <EntryButtons onSubmit={handleSubmit} />
+          <EntryButtons />
         </div>
       </form>
     </div>

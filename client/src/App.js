@@ -28,7 +28,7 @@ function App() {
     <div className="App">
       <NavBar />
       <ViewEntries data={data} />
-      <ViewCreateEnty />
+      <ViewCreateEnty data={data} />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-export default function PhotoUrl() {
+export default function PhotoUrl({ onChangeUrl, activeUrl }) {
   return (
     <>
       <label className="margin-bottom-1 d-block" htmlFor="photoUrk">
@@ -10,6 +10,10 @@ export default function PhotoUrl() {
         type="text"
         id="formURL"
         name="formURL"
+        value={activeUrl}
+        onChange={(e) => {
+          onChangeUrl(e.target.value);
+        }}
       />
     </>
   );

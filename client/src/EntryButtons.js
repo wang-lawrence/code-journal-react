@@ -1,4 +1,4 @@
-export default function EntryButtons({ onSubmit }) {
+export default function EntryButtons() {
   return (
     <div className="column-full d-flex justify-between">
       <button
@@ -7,9 +7,7 @@ export default function EntryButtons({ onSubmit }) {
         id="deleteEntry">
         Delete Entry
       </button>
-      <button
-        className="input-b-radius text-padding purple-background white-text"
-        onSubmit={onSubmit}>
+      <button className="input-b-radius text-padding purple-background white-text">
         SAVE
       </button>
     </div>
