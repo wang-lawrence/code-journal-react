@@ -25,7 +25,7 @@ let data = {
 // }
 
 function App() {
-  const [view, setView] = useState('enentry-form');
+  const [view, setView] = useState('entry-form');
 
   function handleSwap(text) {
     setView(text);
@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
+      <NavBar onViewSwap={handleSwap} />
       {view === 'entries' ? (
         <ViewEntries data={data} onViewSwap={handleSwap} />
       ) : (
